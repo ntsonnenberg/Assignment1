@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!--head tag includes title, favicon, and css file for styles-->
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="img/favicon-16x16.png" />
+    <link href="~/css/mystyles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--My preferred name and image of me golfing-->
+    <header>
+        <h1>@ViewBag.Name</h1>
+        <menu>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Home" asp-action="GradeCalculator">Grade Calculator</a></li>
+            </ul>
+        </menu>
+    </header>
+
+    @RenderBody()
+
+    <br />
+    <footer>Est. January 26 © 2021</footer>
+    <br />
+
+    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+    <!--Javascript to calculate grade in IS 413-->
+    <script src="~/js/calculateGrade.js"></script>
+</body>
+
+</html>

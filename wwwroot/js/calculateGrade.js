@@ -1,4 +1,4 @@
-﻿var submit = document.getElementById("submitButton");
+﻿$("#submitButton").click(calculateGrade);
 
 /**
  * the calculateGrade function grabs the overall percentage grades of each grade category the user filled out in the html form,
@@ -8,11 +8,11 @@
 function calculateGrade()
 {
     
-    var assignmentPct = document.getElementById("assignments").value;
-    var projectPct = document.getElementById("projects").value;
-    var quizPct = document.getElementById("quizzes").value;
-    var examPct = document.getElementById("exams").value;
-    var intexPct = document.getElementById("intex").value;
+    var assignmentPct = $("#assignments").val();
+    var projectPct = $("#projects").val();
+    var quizPct = $("#quizzes").val();
+    var examPct = $("#exams").val();
+    var intexPct = $("#intex").val();
 
     var finalGradePct = (assignmentPct * 0.5) + (projectPct * 0.1) + (quizPct * 0.1) + (examPct * 0.2) + (intexPct * 0.1);
     var letterGrade = "";
@@ -44,5 +44,3 @@ function calculateGrade()
 
     alert("Percent Grade: " + finalGradePct + "\nLetter Grade: " + letterGrade);
 }
-
-submit.addEventListener("click", calculateGrade);
